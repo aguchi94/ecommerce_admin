@@ -1,3 +1,5 @@
+import 'package:ecommerce_admin/globals/constants.dart';
+import 'package:ecommerce_admin/globals/drawer_lateral.dart';
 import 'package:flutter/material.dart';
 
 class HomePageUi extends StatefulWidget {
@@ -8,13 +10,13 @@ class HomePageUi extends StatefulWidget {
 }
 
 class _HomePageUiState extends State<HomePageUi> {
+  final String _page = 'Pagina Principal';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Mobile AppBar'),
-      ),
-      body: Text('Hola'),
+      appBar: myAppBarMobile(context, _page),
+      drawer: MyDrawerLateral(currentPage: _page),
+      body: const Text('Hola'),
     );
   }
 }
